@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/mainPageFragment">
+
+    <fragment
+        android:id="@+id/mainPageFragment"
+        android:name="com.example.getirprojectapplication.MainPageFragment"
+        android:label="MainPageFragment"
+        tools:layout="@layout/fragment_main_page">
+        <action
+            android:id="@+id/actionObjDetail"
+            app:destination="@id/objDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileBottomNavFragment2"
+        android:name="com.example.getirprojectapplication.ProfileBottomNavFragment"
+        android:label="fragment_profile_bottom_nav"
+        tools:layout="@layout/fragment_profile_bottom_nav" />
+    <fragment
+        android:id="@+id/searchBottomNavFragment2"
+        android:name="com.example.getirprojectapplication.SearchBottomNavFragment"
+        android:label="fragment_search_bottom_nav"
+        tools:layout="@layout/fragment_search_bottom_nav" />
+    <fragment
+        android:id="@+id/getirFoodBottomNavFragment"
+        android:name="com.example.getirprojectapplication.GetirFoodBottomNavFragment"
+        android:label="fragment_getir_food_bottom_nav"
+        tools:layout="@layout/fragment_getir_food_bottom_nav" >
+        <argument
+            android:name="inComingToBasket"
+            app:argType="com.example.getirprojectapplication.ObjDataset" />
+    </fragment>
+    <fragment
+        android:id="@+id/objDetailFragment"
+        android:name="com.example.getirprojectapplication.ObjDetailFragment"
+        android:label="ObjDetailFragment"
+        tools:layout="@layout/fragment_obj_detail">
+        <argument
+            android:name="Object"
+            app:argType="com.example.getirprojectapplication.ObjDataset" />
+        <action
+            android:id="@+id/actionToBasket"
+            app:destination="@id/getirFoodBottomNavFragment" />
+    </fragment>
+</navigation>
